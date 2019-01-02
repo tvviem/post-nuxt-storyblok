@@ -27,12 +27,15 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    '@/assets/scss/main.scss',
+    '@fortawesome/fontawesome-svg-core/styles.css'
   ],
 
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~/plugins/fontawesome.js',
   ],
 
   /*
@@ -42,7 +45,8 @@ module.exports = {
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
     // Doc:https://github.com/nuxt-community/modules/tree/master/packages/bulma
-    '@nuxtjs/bulma'
+    '@nuxtjs/bulma',
+    ['storyblok-nuxt', {accessToken: 'P9SJiuJZBVpZooUYOkKfZAtt', cacheProvider: 'memory'}]
   ],
   /*
   ** Axios module configuration
@@ -65,7 +69,7 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
-    extend(config, ctx) {
+    /* extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
@@ -75,6 +79,6 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    } */
   }
 }
